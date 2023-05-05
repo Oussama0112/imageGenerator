@@ -1,0 +1,122 @@
+:root {
+  --main-color: #0debc4;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  background-color: var(--main-color);
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid #777;
+  box-shadow: 0 0 20px 2px white;
+  background-color: white;
+  padding: 1em;
+  border-radius: 0.5em;
+  max-width: 500px;
+  align-items: center;
+  text-transform: capitalize;
+  min-height: 220px;
+}
+.container h1 {
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke: 1px;
+  -webkit-text-stroke-color: var(--main-color);
+  text-align: center;
+}
+hr {
+  width: 100%;
+  background-color: var(--main-color);
+}
+.container .wraper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.container .wraper .image {
+  width: 300px;
+  height: 300px;
+  border: 4px solid var(--main-color);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .wraper .image span {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border-style: dashed solid solid solid;
+  border-width: 7px;
+  border-color: #dedede #977373 #7c6969 black;
+  animation: uploading 1s linear infinite;
+}
+@keyframes uploading {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.container .wraper .image img {
+  width: 100%;
+  height: 100%;
+}
+
+button {
+  --tran-or: right;
+  display: block;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--main-color);
+  background-color: transparent;
+  padding: 0.3em 0.8em;
+  text-transform: capitalize;
+  cursor: pointer;
+  border: 3px solid var(--main-color);
+  border-radius: 0.2em;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+  box-shadow: 0 0 10px 2px var(--main-color) inset;
+}
+button::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  transform: scale(0, 0);
+  transition: 0.5s;
+  box-shadow: 0 0 50px 1px var(--main-color) inset;
+
+  transform-origin: var(--tran-or);
+}
+button:hover::before {
+  transform: scale(1, 1);
+}
+.container .artist {
+  font-size: 1.325rem;
+  font-weight: 700;
+  color: var(--main-color);
+  padding: 0.3em 0.8em;
+  text-transform: capitalize;
+  border: 3px solid var(--main-color);
+  border-radius: 0.2em;
+  box-shadow: 0 0 10px 2px var(--main-color) inset;
+  width: 200px;
+  min-height: 50px;
+  text-align: center;
+}
